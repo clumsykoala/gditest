@@ -1251,6 +1251,7 @@ async function file(path) {
 }
 
 const copyButton = `<button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button>`
+const embedButton = `<button onclick="embedFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button>`
 
 function generateCopyFileBox(file_id, cookie_folder_id) {
 	const copyFileBox = `<div class="row justify-content-center mt-3" id="copyresult">
@@ -1513,9 +1514,10 @@ function file_video(name, encoded_name, size, poster, url, mimeType, file_id, co
               <a class="dropdown-item" href="intent:${url}#Intent;component=idm.internet.download.manager.plus/idm.internet.download.manager.Downloader;S.title=${encoded_name};end">1DM+ (Plus)</a>
               </div>
           </div>
+		  `+copyButton+`
 		  <div class="card-body">
           <div class="input-group mb-4">
-          <input type="text" class="form-control" id="dlurl" value="${streamurl}" readonly>
+          <input type="text" class="form-control" id="dlstreamurlurl" value="${streamurl}" readonly>
           </div>
           <div class="btn-group text-center">
               <a href="${streamurl}" type="button" class="btn btn-primary">Embed</a>
@@ -1523,7 +1525,7 @@ function file_video(name, encoded_name, size, poster, url, mimeType, file_id, co
               <span class="sr-only"></span>
               </button>
           </div>
-          `+copyButton+copyFileBox+`
+          `+embedButton+copyFileBox+`
           
           </div>
           </div>
@@ -1914,7 +1916,20 @@ function copyFunction() {
 			console.error("Failed to copy text: ", error);
 		});
 }
+function embedFunction() {
+	var copyText = document.getElementById("dlstreamurl");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
 
+	navigator.clipboard.writeText(copyText.value)
+		.then(function() {
+			var tooltip = document.getElementById("myTooltip");
+			tooltip.innerHTML = "Copied";
+		})
+		.catch(function(error) {
+			console.error("Failed to copy text: ", error);
+		});
+}
 function outFunc() {
 	var tooltip = document.getElementById("myTooltip");
 	tooltip.innerHTML = "Copy";
