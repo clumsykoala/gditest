@@ -1251,7 +1251,7 @@ async function file(path) {
 }
 
 const copyButton = `<button onclick="copyFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button>`
-const embedButton = `<button onclick="embedFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltip">Copy</span> </button>`
+const embedButton = `<button onclick="embedFunction()" onmouseout="outFunc()" class="btn btn-success"> <span class="tooltiptext" id="myTooltips">Copy</span> </button>`
 
 function generateCopyFileBox(file_id, cookie_folder_id) {
 	const copyFileBox = `<div class="row justify-content-center mt-3" id="copyresult">
@@ -1923,7 +1923,7 @@ function embedFunction() {
 
 	navigator.clipboard.writeText(copyText.value)
 		.then(function() {
-			var tooltip = document.getElementById("myTooltip");
+			var tooltip = document.getElementById("myTooltips");
 			tooltip.innerHTML = "Copied";
 		})
 		.catch(function(error) {
