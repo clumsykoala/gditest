@@ -1416,8 +1416,7 @@ function file_code(name, encoded_name, size, bytes, url, ext, file_id, cookie_fo
 }
 
 
-function convertToStreamURL(downloadURL) {
-	// Replace 'download.aspx' with 'stream.aspx' in the URL
+function convertToStreamURL(url) {
 	var streamurl = url.replace('download.aspx', 'stream.aspx');
 	return streamurl;
   }
