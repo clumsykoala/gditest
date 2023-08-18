@@ -1517,7 +1517,7 @@ function file_video(name, encoded_name, size, poster, url, mimeType, file_id, co
 		  `+copyButton+`
 		  <div class="card-body">
           <div class="input-group mb-4">
-          <input type="text" class="form-control" id="dlstreamurlurl" value="${streamurl}" readonly>
+          <input type="text" class="form-control" id="dlstreamurl" value="${streamurl}" readonly>
           </div>
           <div class="btn-group text-center">
               <a href="${streamurl}" type="button" class="btn btn-primary">Embed</a>
