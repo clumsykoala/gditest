@@ -1537,7 +1537,7 @@ function file_video(name, encoded_name, size, poster, url, mimeType, file_id, co
           <input type="text" class="form-control" id="dlshareurl" value="${shareurl}" readonly>
           </div>
           <div class="btn-group text-center">
-              <a href="${shareurl}" type="button" class="btn btn-primary">Embed</a>
+              <a href="${shareurl}" type="button" class="btn btn-primary">Share</a>
               <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="sr-only"></span>
               </button>
