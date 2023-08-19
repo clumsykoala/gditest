@@ -1434,6 +1434,7 @@ function file_video(name, encoded_name, size, poster, url, mimeType, file_id, co
 	// Split the file path into parts
 	var path = window.location.pathname;
 	var streamurl = convertToStreamURL(url);
+	var shareurl = convertToShareURL(url);
 	var pathParts = path.split('/');
 	const copyFileBox = UI.allow_file_copy ? generateCopyFileBox(file_id, cookie_folder_id) : '';
 	// Generate the navigation based on path parts
