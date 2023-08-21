@@ -277,7 +277,7 @@ function requestSearch(params, resultCallback, retries = 3) {
 	};
 
 	function performRequest(retries) {
-		fetch(`/${window.current_drive_order}:search`, {
+		fetch(`/sub/${window.current_drive_order}:search`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -1059,7 +1059,7 @@ function onSearchResultItemClick(file_id, can_preview) {
 		id: file_id
 	};
 	// Request a path
-	fetch(`/${cur}:id2path`, {
+	fetch(`/sub/${cur}:id2path`, {
 			method: 'POST',
 			body: JSON.stringify(p),
 			headers: {
